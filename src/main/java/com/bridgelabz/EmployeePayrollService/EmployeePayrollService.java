@@ -2,6 +2,7 @@ package com.bridgelabz.EmployeePayrollService;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollService {
@@ -14,10 +15,19 @@ public class EmployeePayrollService {
 
     public static void main(String[] args) {
         System.out.println("Employee payroll service program");
-        ArrayList<EmployeePayroll> employeePayrollsList = new ArrayList<>();
+//        ArrayList<EmployeePayroll> employeePayrollsList = new ArrayList<>();
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
-        employeePayrollService.readEmployeePayrollData();
-        employeePayrollService.writeEmployeePayrollData();
+//        employeePayrollService.readEmployeePayrollData();
+//        employeePayrollService.writeEmployeePayrollData();
+
+        EmployeePayrolFilelOService fileIO = new EmployeePayrolFilelOService();
+        List<EmployeePayroll> list = new ArrayList<>();
+        list.add(new EmployeePayroll(10,"abc",10000));
+        list.add(new EmployeePayroll(20,"pqr",20000));
+        list.add(new EmployeePayroll(30,"xyz",30000));
+
+        fileIO.writeDataToFile(list);
+
     }
 
     public void readEmployeePayrollData(){
